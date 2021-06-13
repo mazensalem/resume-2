@@ -1,15 +1,22 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import Header from "../components/header";
+import Sidebar from "../components/sidebar";
+import About from "../components/about";
+import Experience from "../components/experience";
+import Education from "../components/Education";
+import Skills from "../components/Skills";
+import Portfolio from "../components/portfolio";
 
 const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+  <>
+    <Header />
+    <Sidebar />
+    <About />
+    <Experience />
+    <div className="hidden md:block ml-44 bg-black opacity-50 h-0.5 mt-3" />
+    <Education />
+    <Skills />
+    <Portfolio />
+  </>
+);
 
-export default IndexPage
+export default IndexPage;
