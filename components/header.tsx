@@ -17,15 +17,25 @@ function header() {
         <p className="pb-3 text-5xl md:text-7xl">{`/>`}</p>
       </div>
       <div className="flex w-2/4 m-auto mt-2 justify-between md:hidden">
-        <div className="w-6 h-6 text-gray-400 hover:fill-current cursor-pointer">
+        <a
+          href="tel:01234567890"
+          className="w-6 h-6 text-gray-400 hover:fill-current cursor-pointer"
+        >
           <Phone />
-        </div>
-        <div className="w-6 h-6 text-gray-400 hover:fill-current cursor-pointer">
+        </a>
+        <a
+          href="mailto:info@example.com"
+          className="w-6 h-6 text-gray-400 hover:fill-current cursor-pointer"
+        >
           <Email />
-        </div>
-        <div className="w-6 h-6 text-gray-400 hover:fill-current cursor-pointer">
+        </a>
+        <a
+          target="blank"
+          href="https://www.github.com"
+          className="w-6 h-6 text-gray-400 hover:fill-current cursor-pointer"
+        >
           <Github />
-        </div>
+        </a>
       </div>
     </div>
   );
