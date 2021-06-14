@@ -151,7 +151,7 @@ export default function Experience() {
               {data[get_the_back(pointer, data.length - 1)].description}
             </div>
           </div>
-          {/* cursor-pointer hover Card */}
+          {/* Active Card */}
           <div
             className={`bg-gray-200 md:w-2/5 w-4/6 rounded-md transition duration-2000 ${animation_current_style}`}
           >
