@@ -16,6 +16,9 @@ const IndexPage = () => (
     <Education />
     <Skills />
     <Portfolio />
+    <div className="bg-black text-white text-center md:text-lg">
+      &copy; Mazen Salem. All rights reserved.
+    </div>
   </>
 );
 
