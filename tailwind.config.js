@@ -8,6 +8,12 @@ module.exports = {
         2000: "2000ms",
         0: "0ms",
       },
+      width: {
+        "9/6": "96%",
+      },
+      screens: {
+        change_text: "1100px",
+      },
     },
   },
   variants: {

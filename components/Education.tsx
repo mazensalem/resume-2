@@ -52,10 +52,10 @@ export default function Experience() {
         if (!is_second_move_next) {
           is_second_move_next = true;
           setanimation_next_style(
-            "duration-0 opacity-0 transform translate-x-2/4"
+            "transition-none duration-0 opacity-0 transform translate-x-2/4"
           );
           setanimation_current_style(
-            "duration-0 opacity-100 transform translate-x-0"
+            "transition-none duration-0 opacity-100 transform translate-x-0"
           );
           setPointer(get_the_next(pointer, data.length - 1));
         } else {
@@ -74,10 +74,10 @@ export default function Experience() {
         if (!is_second_move_back) {
           is_second_move_back = true;
           setanimation_current_style(
-            "duration-0 opacity-100 transform translate-x-0"
+            "transition-none duration-0 opacity-100 transform translate-x-0"
           );
           setanimation_back_style(
-            "duration-0 opacity-0 transform -translate-x-2/4"
+            "transition-none duration-0 opacity-0 transform -translate-x-2/4"
           );
           setPointer(get_the_back(pointer, data.length - 1));
         } else {
@@ -95,9 +95,9 @@ export default function Experience() {
       setTimeout(() => {
         if (!is_second_move_desktop) {
           is_second_move_desktop = true;
-          set_animation_desktop_style("duration-0 right-0");
+          set_animation_desktop_style("transition-none duration-0 right-0");
           set_animation_desktop_next_style(
-            "duration-0 opacity-0 translate-x-2/4"
+            "transition-none duration-0 opacity-0 translate-x-2/4"
           );
           setPointer(get_the_next(pointer, data.length - 1));
         } else {
@@ -118,8 +118,12 @@ export default function Experience() {
         {/* Arrow */}
         <div
           onClick={() => {
-            setanimation_current_style("opacity-0 translate-x-2/4 transform");
-            setanimation_back_style("opacity-100 transform translate-x-0");
+            setanimation_current_style(
+              "transition-all duration-2000 opacity-0 translate-x-2/4 transform"
+            );
+            setanimation_back_style(
+              "transition-all duration-2000 opacity-100 transform translate-x-0"
+            );
           }}
           className="md:hidden z-20 w-10 h-10 rotate-90 opacity-50 cursor-pointer hover:opacity-100 transform mt-5"
         >
@@ -130,7 +134,7 @@ export default function Experience() {
         <div className="flex relative justify-around md:justify-between w-full">
           {/* Back Card */}
           <div
-            className={`bg-gray-200 md:hidden w-4/6 rounded-md transition absolute z-10 duration-2000 ${animation_back_style}`}
+            className={`cursor-default bg-gray-200 md:hidden w-4/6 rounded-md absolute z-10 ${animation_back_style}`}
           >
             <div className="text-2xl text-center">
               {data[get_the_back(pointer, data.length - 1)].degree}
@@ -144,7 +148,7 @@ export default function Experience() {
           </div>
           {/* Current Card */}
           <div
-            className={`bg-gray-200 md:w-2/5 w-4/6 rounded-md transition duration-2000 ${animation_current_style}`}
+            className={`z-20 bg-gray-200 md:w-2/5 w-4/6 rounded-md ${animation_current_style}`}
           >
             <div className="text-2xl text-center">{data[pointer].degree}</div>
             <div className="text-center">{data[pointer].university_name}</div>
@@ -152,7 +156,7 @@ export default function Experience() {
           </div>
           {/* Next Card */}
           <div
-            className={`bg-gray-200 md:hidden w-4/6 rounded-md transition absolute duration-2000 ${animation_next_style}`}
+            className={`z-10 cursor-default bg-gray-200 md:hidden w-4/6 rounded-md absolute ${animation_next_style}`}
           >
             <div className="text-2xl text-center">
               {data[get_the_next(pointer, data.length - 1)].degree}
@@ -167,7 +171,7 @@ export default function Experience() {
 
           {/* Desktop Card */}
           <div
-            className={`hidden md:block absolute bg-gray-200 md:w-2/5 w-4/6 rounded-md transform transition-all duration-2000 ${animation_desktop_style}`}
+            className={`z-30 hidden md:block absolute bg-gray-200 md:w-2/5 w-4/6 rounded-md transform ${animation_desktop_style}`}
           >
             <div className="text-2xl text-center">
               {data[get_the_next(pointer, data.length - 1)].degree}
@@ -181,7 +185,7 @@ export default function Experience() {
           </div>
           {/* Desktop Next Card */}
           <div
-            className={`hidden md:block bg-gray-200 md:w-2/5 w-4/6 rounded-md transition-all absolute right-0 duration-2000 transform ${animation_desktop_next_style}`}
+            className={`hidden md:block bg-gray-200 md:w-2/5 w-4/6 rounded-md absolute right-0 transform ${animation_desktop_next_style}`}
           >
             <div className="text-2xl text-center">
               {
@@ -219,18 +223,26 @@ export default function Experience() {
         {/* Arrow */}
         <div
           onClick={() => {
-            setanimation_current_style("opacity-0 -translate-x-2/4 transform");
-            setanimation_next_style("opacity-100 transform translate-x-0");
+            setanimation_current_style(
+              "transition-all duration-2000 opacity-0 -translate-x-2/4 transform"
+            );
+            setanimation_next_style(
+              "transition-all duration-2000 opacity-100 transform translate-x-0"
+            );
           }}
-          className="md:hidden w-10 h-10 -rotate-90 opacity-50 cursor-pointer hover:opacity-100 transform mt-5"
+          className="z-20 md:hidden w-10 h-10 -rotate-90 opacity-50 cursor-pointer hover:opacity-100 transform mt-5"
         >
           <Arrow />
         </div>
         {/* Desktop Arrow */}
         <div
           onClick={() => {
-            set_animation_desktop_next_style("opacity-100 translate-x-0");
-            set_animation_desktop_style("right-full translate-x-full");
+            set_animation_desktop_next_style(
+              "transition-all duration-2000 opacity-100 translate-x-0"
+            );
+            set_animation_desktop_style(
+              "transition-all duration-2000 right-full translate-x-full"
+            );
           }}
           className="hidden md:block md:ml-6 w-10 h-10 -rotate-90 opacity-50 cursor-pointer hover:opacity-100 transform mt-5"
         >
