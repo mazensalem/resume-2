@@ -2,6 +2,7 @@ import Arrow from "../svgs/arrow";
 import { useState, useEffect } from "react";
 import get_the_next from "../functions/get_the_next_pointer";
 import get_the_back from "../functions/get_the_back_pointer";
+import rowdata from "../data/data.json";
 
 let is_first_render_next = true;
 let is_second_move_next = false;
@@ -41,29 +42,7 @@ export default function Portfolio() {
   const [animation_start_desktop, setanimation_start_desktop] = useState(
     "transition-all duration-2000 -left-0"
   );
-  const data = [
-    {
-      id: 1,
-      img: "https://www.google.com.sa/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
-      title: "project1",
-      description: "description1",
-      url: "url1",
-    },
-    {
-      id: 2,
-      img: "img2",
-      title: "project2",
-      description: "description2",
-      url: "url2",
-    },
-    {
-      id: 3,
-      img: "img3",
-      title: "project3",
-      description: "description3",
-      url: "url3",
-    },
-  ];
+  const data = rowdata.portfolio;
   const [pointer, setPointer] = useState(1);
   const [isdetatlishidden, setisdetatishidden] = useState("opacity-0");
   const [isdetatlishiddendesktop1, setisdetatlishiddendesktop1] =
@@ -152,7 +131,9 @@ export default function Portfolio() {
   return (
     <div className="ml-3 md:ml-44 mt-6 pb-9">
       {/* Main Title */}
-      <h1 className="mb-3 text-2xl md:text-3xl">Some past project</h1>
+      <h1 className="mb-3 text-2xl md:text-3xl">
+        {`<`} Some past project {`/>`}
+      </h1>
       {/* Main Content */}
       <div className="items-center flex justify-between pr-1">
         {/* Moble Arrow */}
@@ -192,7 +173,7 @@ export default function Portfolio() {
               className={`absolute ${animation_back_style} rounded-md h-full bg-red-400 top-0 z-10`}
             >
               <img
-                src="./project.jpg"
+                src={data[get_the_back(pointer, data.length - 1)].img}
                 alt="img"
                 className="rounded-md h-full w-full"
               />
@@ -229,7 +210,7 @@ export default function Portfolio() {
               className={`absolute ${pos_current} w-2/4 h-full bg-red-400 top-0 z-20`}
             >
               <img
-                src="./project.jpg"
+                src={data[pointer].img}
                 alt="img"
                 className="rounded-md h-full w-full"
               />
@@ -241,7 +222,7 @@ export default function Portfolio() {
               className={`${animation_next_style} rounded-md absolute h-full bg-red-400 top-0 z-10`}
             >
               <img
-                src="./project.jpg"
+                src={data[get_the_next(pointer, data.length - 1)].img}
                 alt="img"
                 className="rounded-md h-full w-full"
               />
@@ -255,7 +236,11 @@ export default function Portfolio() {
               className={`absolute z-30 w-1/3 top-2/4 transform -translate-y-2/4 ${animation_back_desktop}`}
             >
               <div>
-                <img src="./project.jpg" alt="image" className="rounded-md" />
+                <img
+                  src={data[get_the_back(pointer, data.length - 1)].img}
+                  alt="image"
+                  className="rounded-md"
+                />
               </div>
             </div>
 
@@ -287,7 +272,11 @@ export default function Portfolio() {
                 </a>
               </div>
               <div>
-                <img src="./project.jpg" alt="image" className="rounded-md" />
+                <img
+                  src={data[pointer].img}
+                  alt="image"
+                  className="rounded-md"
+                />
               </div>
             </div>
             <div
@@ -317,7 +306,11 @@ export default function Portfolio() {
                 </a>
               </div>
               <div>
-                <img src="./project.jpg" alt="image" className="rounded-md" />
+                <img
+                  src={data[get_the_next(pointer, data.length - 1)].img}
+                  alt="image"
+                  className="rounded-md"
+                />
               </div>
             </div>
             <div
@@ -368,7 +361,18 @@ export default function Portfolio() {
                 </a>
               </div>
               <div>
-                <img src="./project.jpg" alt="image" className="rounded-md" />
+                <img
+                  src={
+                    data[
+                      get_the_next(
+                        get_the_next(pointer, data.length - 1),
+                        data.length - 1
+                      )
+                    ].img
+                  }
+                  alt="image"
+                  className="rounded-md"
+                />
               </div>
             </div>
 
@@ -377,7 +381,21 @@ export default function Portfolio() {
               className={`absolute w-1/3 top-2/4 transform -translate-y-2/4 ${animation_next_desktop}`}
             >
               <div>
-                <img src="./project.jpg" alt="image" className="rounded-md" />
+                <img
+                  src={
+                    data[
+                      get_the_next(
+                        get_the_next(
+                          get_the_next(pointer, data.length - 1),
+                          data.length - 1
+                        ),
+                        data.length - 1
+                      )
+                    ].img
+                  }
+                  alt="image"
+                  className="rounded-md"
+                />
               </div>
             </div>
           </div>

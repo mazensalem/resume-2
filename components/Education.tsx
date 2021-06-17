@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Arrow from "../svgs/arrow";
 import get_the_next from "../functions/get_the_next_pointer";
 import get_the_back from "../functions/get_the_back_pointer";
+import rowdata from "../data/data.json";
 
 let is_first_render_next = true;
 let is_first_render_back = true;
@@ -11,26 +12,7 @@ let is_second_move_back = false;
 let is_second_move_desktop = false;
 
 export default function Experience() {
-  const data = [
-    {
-      id: 1,
-      degree: "degree-1",
-      university_name: "university-name-1",
-      date: "0000/0000",
-    },
-    {
-      id: 2,
-      degree: "degree-2",
-      university_name: "university-name-2",
-      date: "0000/0000",
-    },
-    {
-      id: 3,
-      degree: "degree-3",
-      university_name: "university-name-3",
-      date: "0000/0000",
-    },
-  ];
+  const data = rowdata.education;
   const [pointer, setPointer] = useState(0);
   const [animation_back_style, setanimation_back_style] = useState(
     "opacity-0 transform -translate-x-2/4"
@@ -111,7 +93,7 @@ export default function Experience() {
     <>
       {/* Main title */}
       <div className="mt-6 md:mr-6 md:mt-12 ml-3 text-2xl mb-2 md:float-left md:ml-44">
-        Education
+        {`<`}Education{`/>`}
       </div>
       {/* Main Body */}
       <div className="flex justify-between mx-3 md:mt-3">
