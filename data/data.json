@@ -1,82 +1,77 @@
 {
-  "name": "mazen salem",
-  "job": "Front End Developer",
-  "phone": "+201285301916",
-  "email": "salemmazen27@gmail.com",
-  "github": "https://github.com/mazensalem",
-  "aboutme": "i'm a front-end developer. i work on alot of project mainly for my family and for freelanceing. i make all my websites responseve so it well have a beautifull looking at any devese. i am very familiar with react & next js. i build all of my projects with next js",
+  "name": "jone smith",
+  "job": "job title",
+  "phone": "01234567890",
+  "email": "info@example.com",
+  "github": "https://github.com",
+  "aboutme": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
   "experience": [
     {
-      "job_title": "freelance",
-      "company_name": "mazen salem",
-      "location": "remote job",
-      "date": "2019/current",
-      "description": "sense iam a student i found the easy way to make money is by do some projects online so i should't go to any where else while iam studing"
+      "job_title": "title-1",
+      "company_name": "company-1",
+      "location": "location-1",
+      "date": "0000/0000",
+      "description": "description-1"
     },
     {
-      "job_title": "youtuber",
-      "company_name": "beging code",
-      "location": "remote job",
-      "date": "2021/current",
-      "description": "i like to tech people how to code and help them if i can so i love make some courses on youtube so anyone can learn from it"
+      "job_title": "title-2",
+      "company_name": "company-2",
+      "location": "location-2",
+      "date": "0000/0000",
+      "description": "description-2"
+    },
+    {
+      "job_title": "title-3",
+      "company_name": "company-3",
+      "location": "location-3",
+      "date": "0000/0000",
+      "description": "description-3"
     }
   ],
   "education": [
     {
-      "degree": "computer science",
-      "university_name": "harverd",
-      "date": "2024/2029"
-    },
-    {
-      "degree": "master computer science",
-      "university_name": "harverd",
-      "date": "2029/2032"
+      "degree": "degree-1",
+      "university_name": "university-1",
+      "date": "0000/0000"
     }
   ],
   "skills": [
     {
-      "title": "HTML",
-      "prcent": 90
+      "title": "skill-1",
+      "prcent": 50
     },
     {
-      "title": "CSS",
-      "prcent": 85
+      "title": "skill-2",
+      "prcent": 50
     },
     {
-      "title": "JS",
-      "prcent": 95
-    },
-    {
-      "title": "REACT",
-      "prcent": 90
-    },
-    {
-      "title": "NEXT JS",
-      "prcent": 95
-    },
-    {
-      "title": "MONGO DB",
-      "prcent": 80
+      "title": "skill-3",
+      "prcent": 50
     }
   ],
   "portfolio": [
     {
-      "title": "courses",
-      "description": "platform you can sell or buy courses",
-      "url": "https://coursesplatform.vercel.com",
+      "title": "title-1",
+      "description": "description-1",
+      "url": "https://www.google.com",
       "img": "./project.jpg"
     },
     {
-      "title": "recpe",
-      "description": "you can see recpe you want",
-      "url": "https://recpewebsite.vercel.com",
+      "title": "title-2",
+      "description": "description-2",
+      "url": "https://www.google.com",
       "img": "./project.jpg"
     },
     {
-      "title": "manage times",
-      "description": "manager for the reminding",
-      "url": "https://managetimeswebsite.vercel.com",
+      "title": "title-3",
+      "description": "description-3",
+      "url": "https://www.google.com",
       "img": "./project.jpg"
     }
-  ]
+  ],
+  "colors": {
+    "primary": "black",
+    "secondry": "gray-200",
+    "main": "gray-700"
+  }
 }

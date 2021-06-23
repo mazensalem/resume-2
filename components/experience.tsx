@@ -83,7 +83,7 @@ export default function Experience() {
     <>
       {/* Main title */}
       <div className="mt-6 md:mr-6 md:mt-12 ml-3 text-2xl mb-2 md:float-left md:ml-44">
-        {`<`}Experience{`/>`}
+        <span className="md:hidden">{`<`}</span> Experience <span className="md:hidden">{`/>`}</span>
       </div>
       {/* Main body */}
       <div className="flex justify-between mx-3 md:mt-6">
